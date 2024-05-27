@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Contacts {% endblock %}
+
+{% block content %}
+<div class="contacts">
+    <h1 style="color: red;">Contact Us</h1>
+
+    <div class="contact-details" style="color: green;">
+        <p><strong>Address:</strong> Uzbekistan, City Namangan</p>
+        <p><strong>Phone:</strong> +998971231009</p>
+        <p><strong>Email:</strong> <a href="mailto:saidorifx@gmail.com" style="color: red;">saidorifx@gmail.com</a></p>
+        <p><strong>Github:</strong> <a href="https://github.com/Saidorifkhuja1" target="_blank" style="color: red;">Github Profile</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/saidorifkhuja-yuldoshkhujaev-31b823278/" target="_blank" style="color: red;">LinkedIn Profile</a></p>
+    </div>
+    <a href="{% url 'home' %}">
+        <button class="btn btn-warning">Home</button>
+    </a>
+</div>
+{% endblock %}
+

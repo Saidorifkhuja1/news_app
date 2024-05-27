@@ -1,0 +1,68 @@
+
+
+{% block content %}
+    <style>
+        .login-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .login-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login-container form .btn {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .login-container form .btn-success {
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+
+        .login-container form .btn-outline-danger {
+            background-color: #fff;
+            color: #dc3545;
+            border-color: #dc3545;
+        }
+
+        .login-container form .btn-outline-danger:hover {
+            background-color: #dc3545;
+            color: #fff;
+        }
+
+        .login-container .password-reset {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .login-container .password-reset a {
+            text-decoration: none;
+        }
+    </style>
+
+    <div class="login-container">
+        <h2>Login</h2>
+        <form method="post">{% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-success" type="submit">Kirish</button>
+            <div class="password-reset">
+                <a class="btn btn-outline-danger" href="{% url 'password_reset' %}" role="button">Kodni yangilash</a>
+            </div>
+        </form>
+    </div>
+{% endblock content %}
